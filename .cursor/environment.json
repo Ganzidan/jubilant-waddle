@@ -1,0 +1,16 @@
+{
+  "name": "jubilant-waddle",
+  "install": "npm ci",
+  "terminals": [
+    {
+      "name": "web",
+      "command": "npm start"
+    }
+  ],
+  "ports": [
+    {
+      "name": "app",
+      "port": 3000
+    }
+  ]
+}
