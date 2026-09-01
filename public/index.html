@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jubilant-waddle · Todos</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1 class="app__title">jubilant-waddle</h1>
+        <p class="app__subtitle">A tiny full-stack demo running in your Cloud Agent environment.</p>
+      </header>
+
+      <form id="new-todo-form" class="composer" autocomplete="off">
+        <input
+          id="new-todo-input"
+          class="composer__input"
+          name="title"
+          type="text"
+          placeholder="What needs doing?"
+          aria-label="New todo title"
+          required
+        />
+        <button class="composer__button" type="submit">Add</button>
+      </form>
+
+      <section class="board" aria-live="polite">
+        <div class="board__meta">
+          <span id="count" class="board__count">0 items</span>
+          <button id="clear-done" class="board__clear" type="button">Clear completed</button>
+        </div>
+        <ul id="todo-list" class="todos"></ul>
+        <p id="empty" class="empty" hidden>Nothing here yet — add your first task above.</p>
+      </section>
+    </main>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
