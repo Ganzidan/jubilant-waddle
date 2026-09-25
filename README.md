@@ -21,6 +21,32 @@ npm start     # start the app on http://localhost:3000
 
 Then open http://localhost:3000 and add, complete, and delete todos.
 
+## Local development on macOS
+
+Setting up on a fresh machine (for example after an OS reinstall)? The
+`scripts/dev-setup.sh` helper selects a matching Node version (via
+[nvm](https://github.com/nvm-sh/nvm) when installed), installs dependencies
+from the lockfile, and is safe to run repeatedly.
+
+```bash
+# 1. Command Line Tools (provides git) — skip if already installed
+xcode-select --install
+
+# 2. Node.js 22 — via nvm (recommended) or Homebrew (`brew install node@22`)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+#   restart the terminal, then:
+nvm install 22 && nvm use 22
+
+# 3. Clone and set up
+git clone https://github.com/Ganzidan/jubilant-waddle.git
+cd jubilant-waddle
+./scripts/dev-setup.sh          # install deps and print next steps
+./scripts/dev-setup.sh --start  # ...or install deps and start the app
+```
+
+If the repository is private, authenticate first with `gh auth login` or clone
+over SSH (`git clone git@github.com:Ganzidan/jubilant-waddle.git`).
+
 ### Useful scripts
 
 | Command       | Description                                  |
@@ -28,6 +54,7 @@ Then open http://localhost:3000 and add, complete, and delete todos.
 | `npm start`   | Start the server on `PORT` (default `3000`). |
 | `npm run dev` | Start with file watching for development.    |
 | `npm test`    | Run the API integration tests.               |
+| `./scripts/dev-setup.sh` | Restore local setup (Node + deps); `--start` also runs the app. |
 
 ## API
 
